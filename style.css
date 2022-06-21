@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: grid;
+    height: 100vh; 
+    grid-template-areas: 
+    "nav nav nav nav"
+    "main main main sidebar"
+    "content1 content2 content3 sidebar"
+    "footer footer footer footer"
+    "copyright copyright copyright copyright";
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.5fr 0.15fr;
+}
+nav {
+    background-color: rgb(84, 156, 238);
+    grid-area: nav;
+    position: relative;
+}
+.navContainer{
+    width: 80%;
+    background-color: rgb(71, 148, 236);
+    justify-content: center;
+    position: relative;
+}
+main {
+    background-color: rgb(52, 34, 153);
+    grid-area: main;
+}
+#sidebar {
+    background-color: rgb(83, 141, 50);
+    grid-area: sidebar;
+}
+#content1 {
+    background-color: rgb(189, 77, 133);
+    grid-area: content1;
+}
+#content2 {
+    background-color: rgb(96, 230, 189);
+    grid-area: content2;
+}
+#content3 {
+    background-color: rgb(98, 156, 223);
+    grid-area: content3;
+}
+footer{
+    background-color: rgb(8, 72, 114);
+    grid-area: footer;
+}
+#copyright{
+    background-color: rgb(69, 171, 240);
+    grid-area: copyright;
+}
+
+/* Make the template Responsive & Mobile friendly */
+@media only screen and (max-width: 700px) {
+    .container{
+        grid-template-areas: 
+            "nav"
+            "main"
+            "sidebar"
+            "content1"
+            "content2"
+            "content3"
+            "footer"
+            "copyright";
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 0.6fr 0.4fr 0.4fr 0.4fr 0.4fr 0.3fr 0.2fr ;
+    }
+} 
