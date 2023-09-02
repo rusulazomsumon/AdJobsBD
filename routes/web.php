@@ -19,9 +19,10 @@ Route::get('/', function () {
     return view('frontend.pages.index');
 });
 
-Route::get('/test', function () {
-    return view('frontend.pages.index');
-});
+// home controller using
+// Route::get('/', 'HomeController@index');
+
+
 
 
 Route::get('/dashboard', function () {
