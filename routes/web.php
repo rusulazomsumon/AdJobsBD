@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('frontend.pages.index');
 });
 
+Route::get('/test', function () {
+    return view('frontend.pages.index');
+});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
