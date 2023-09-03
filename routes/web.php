@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// web homepage route
-Route::get('/', function () {
-    return view('frontend.pages.index');
-});
+// web homepage route direct
+// Route::get('/', function () {
+//     return view('frontend.pages.index');
+// });
 
-// home controller using
-// Route::get('/', 'HomeController@index');
+// using home controller 
+Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 
 
