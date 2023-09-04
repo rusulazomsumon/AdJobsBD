@@ -21,8 +21,12 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // using home controller 
-Route::get('/', 'App\Http\Controllers\HomeController@index');
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 
+// web homepage route direct
+Route::get('/about', function () {
+    return view('frontend.pages.about');
+})->name('about');
 
 
 
