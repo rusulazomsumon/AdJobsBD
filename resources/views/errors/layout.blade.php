@@ -9,7 +9,7 @@
                         <h1 class="mb-4">@yield('message')</h1> 
                         <!-- @yield('message') -->
                         <p class="mb-4">@yield('details')</p>
-                        <a class="btn btn-primary py-3 px-5" href="{{ route('home') }}">@yield('btntxt')</a>
+                        <a class="btn btn-primary py-3 px-5" href="@yield('btnurl')">@yield('btntxt')</a>
                     </div>
                 </div>
             </div>
