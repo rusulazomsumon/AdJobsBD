@@ -4,8 +4,20 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
-    <div class="py-12">
+    <!-- left sidebar -->
+    <div class="py-4">
+        <!-- Dashboard Main Area -->
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-info dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <h3>AdJobsBd</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main dashboard -->
+    <div class="py-8">
+        <!-- Dashboard Main Area -->
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
