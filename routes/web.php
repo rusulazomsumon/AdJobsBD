@@ -24,6 +24,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 
 // web homepage route direct
+Route::get('/cv-genarator', function () {
+    return view('frontend.pages.cv-genarator');
+})->name('cv-genarator');
+
+
+// web homepage route direct
 Route::get('/about', function () {
     return view('frontend.pages.about');
 })->name('about');
