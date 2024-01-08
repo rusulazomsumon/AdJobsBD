@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // web homepage route direct
 // Route::get('/', function () {
 //     return view('frontend.pages.index');
-// });
+// }); 
 
 // using home controller 
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
@@ -27,6 +27,11 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 Route::get('/cv-genarator', function () {
     return view('frontend.pages.cv-genarator');
 })->name('cv-genarator');
+
+// web homepage route direct
+Route::get('/cv-bank', function () {
+    return view('frontend.pages.cv-bank');
+})->name('cv.bank');
 
 
 // web homepage route direct

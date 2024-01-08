@@ -77,7 +77,7 @@
         </nav>
         @else
         <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+            <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
                 <h1 class="m-0 text-primary">AdJobsBd</h1>
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -85,7 +85,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
                     <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jobs</a>
@@ -105,7 +105,7 @@
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                     <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
                 </div>
-                <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="{{ route('cv.bank') }}" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Hire Now<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         @endauth
