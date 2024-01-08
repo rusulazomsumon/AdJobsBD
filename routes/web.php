@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BackendController;
+use App\Http\Controllers\JobPostController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
@@ -67,7 +68,7 @@ Route::get('/about', function () {
 // @@@@@@@@@@@@@@@@@@@bakcend@@@@@@@@@@@@@@@@@
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], function(){
     Route::get('/', [BackendController::class,'index'])->name('dashboard');
-    Route::get('/test', [BackendController::class,'test'])->name('dashboard.test');
+    Route::resource('jobs', JobPostController::class)->names('dashboard.jobs');    
     // category 
     // Route::resource('category', CategoryController::class);
     // post 
