@@ -1,14 +1,13 @@
         <!-- this page refering from the error 404.blade.php page @extends('frontend.pages.404') , now we have use title,code, massage sending by its using yeild, refer from error.layout page -->
 
         <!-- including the app (header & footer and main template) -->
-        @extends('frontend.layouts.app')
+        @extends('backend.layouts.app')
         <!-- Main  Page Body -->
 
 
         @section('content')
-        <!--****************** not in use: 404 showing laravel defult from view.errors.layout>404******** -->
         <!-- 404 Start -->
-        <!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container-xxl py-5" data-wow-delay="0.1s">
             <div class="container text-center">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
@@ -20,6 +19,6 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- 404 End -->
         @endsection

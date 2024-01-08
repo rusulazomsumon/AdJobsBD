@@ -14,3 +14,4 @@ class HomeController extends Controller
         return view('frontend.pages.index', compact('sliders'));
     }
 }
+ 
