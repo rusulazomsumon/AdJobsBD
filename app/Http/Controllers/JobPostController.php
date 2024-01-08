@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Job;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,8 +13,10 @@ class JobPostController extends Controller
      */
     public function index()
     {
-        return view('backend.modules.jobs.index');
+        $jobs = Job::all(); // Retrieve all jobs from the database
+        return view('backend.modules.jobs.index', compact('jobs')); // Pass jobs data to the view
     }
+
 
     /**
      * Show the form for creating a new resource.

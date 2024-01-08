@@ -22,6 +22,31 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Company</th>
+                                            <th>Category</th>
+                                            <th>Location</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($jobs as $job)
+                                        <tr>
+                                            <td>{{ $job->title }}</td>
+                                            <td>{{ $job->company->name ?? 'N/A' }}</td> 
+                                            <td>{{ $job->category->name ?? 'N/A' }}</td> 
+                                            <td>{{ $job->location }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            <div>
+                        </div>
                     </div>
                 </main>
             @endsection
