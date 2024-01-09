@@ -13,7 +13,7 @@ class JobPostController extends Controller
      */
     public function index()
     {
-        $jobs = Job::all(); // Retrieve all jobs from the database
+        $jobs = Job::latest()->paginate(10); 
         return view('backend.modules.jobs.index', compact('jobs')); // Pass jobs data to the view
     }
 
@@ -63,6 +63,13 @@ class JobPostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $job = Job::findOrFail($id);
+            $job->delete();
+
+            return redirect()->route('dashboard.jobs')->with('success', 'Job deleted successfully!');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Failed to delete job. Please try again.');
+        }
     }
 }
