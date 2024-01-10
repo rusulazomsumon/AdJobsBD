@@ -66,7 +66,7 @@
                                                 </form>
                                             </td>
                                             <td class="p-3">      
-                                                <a href="#" class="btn btn-sm btn-info">View</a>
+                                                <a href="{{ route('front.single', $job->id) }}" class="btn btn-sm btn-info">View</a>
                                             </td>
                                         </tr>
                                         @endforeach

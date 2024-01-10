@@ -43,6 +43,10 @@ Route::get('/clear-all', function () {
 
 //  home page 
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
+// Route::get('/jobs-details', 'App\Http\Controllers\HomeController@jobs')->name('jobs-details');
+// single job view
+Route::get('/single-job/{id}', [HomeController::class, 'single'])->name('front.single');
+
 
 
 // web homepage route direct
