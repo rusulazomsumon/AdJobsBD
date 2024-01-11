@@ -37,11 +37,11 @@ class CreateJobsTable extends Migration
             $table->text('suggested_accommodations')->nullable();
 
             // Foreign keys
-            // $table->foreign('company_id')->references('id')->on('companies');
-            // $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('company_id')->references('id')->on('company');
+            $table->foreign('category_id')->references('id')->on('job_category');
 
             // Ensure InnoDB engine for foreign key support
-            // $table->engine = 'InnoDB';
+            $table->engine = 'InnoDB';
         });
     }
 
