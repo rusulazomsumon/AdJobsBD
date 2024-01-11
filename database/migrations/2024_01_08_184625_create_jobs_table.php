@@ -20,6 +20,7 @@ class CreateJobsTable extends Migration
             $table->unsignedBigInteger('company_id');
             $table->unsignedBigInteger('category_id');
             $table->string('location');
+            $table->string('vacancy');
             $table->string('salary'); // Adjust based on your data type
             $table->string('type');
             $table->string('experience_level');
