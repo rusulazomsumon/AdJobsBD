@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         // Fetch job with related company and category data
         $job = DB::table('jobs')
-        ->select('jobs.*', 'company.name as company_name', 'company.description as company_description', 'company.picture as company_logo', 'job_category.name as category_name')
+        ->select('jobs.*', 'company.name as company_name', 'company.description as company_description', 'company.picture as company_logo', 'job_category.category_types as category_name')
         ->leftJoin('company', 'jobs.company_id', '=', 'company.id')
         ->leftJoin('job_category', 'jobs.category_id', '=', 'job_category.id')
         ->where('jobs.id', $id)

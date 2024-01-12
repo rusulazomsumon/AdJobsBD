@@ -51,7 +51,7 @@
                                         <tr>
                                             <td class="p-3">{{ $job->title }}</td>
                                             <td class="p-3">{{ $job->company_name ?? 'N/A' }}</td>
-                                            <td class="p-3">{{ $job->category->name ?? 'N/A' }}</td>
+                                            <td class="p-3">{{ $job->category_name ?? 'N/A' }}</td>
                                             <td class="p-3">{{ $job->location }}</td>
                                             <td class="p-3">
                                             <a href="#" class="btn btn-sm btn-primary">Edit</a>
@@ -75,7 +75,7 @@
                                 </table>
                             <div>
                             <!-- {{-- pagignate pages --}} -->
-                            <div class="col-xl-3 col-md-12 pagination mt-3 d-flex justify-content-center">
+                            <div class="col-xl-3 col-md-12 pagination p-5 mt-3 d-flex justify-content-center">
                                 <ul class="pagination-container">
                                     {{ $jobs->links('pagination::bootstrap-4') }}
                                 </ul>

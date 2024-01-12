@@ -1,4 +1,4 @@
-{{-- @dd($job) --}}
+{{-- @dd($job); --}}
        <!-- including the app (header & footer) -->
         @extends('frontend.layouts.app')
 
