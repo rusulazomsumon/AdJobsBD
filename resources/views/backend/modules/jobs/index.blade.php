@@ -14,6 +14,7 @@
                         <div class="row">
                             <div class="col-xl-12 col-md-12">
                                 <div class="card bg-primary text-white mb-4">
+                                    {{-- <div class="card-body">Total {{ $jobs->total() }} Jobs Found</div> --}}
                                     <div class="card-body">Total {{ $jobs->total() }} Jobs Found</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#"> Add New Job </a>
@@ -49,7 +50,7 @@
                                         @foreach ($jobs as $job)
                                         <tr>
                                             <td class="p-3">{{ $job->title }}</td>
-                                            <td class="p-3">{{ $job->company->name ?? 'N/A' }}</td>
+                                            <td class="p-3">{{ $job->company_name ?? 'N/A' }}</td>
                                             <td class="p-3">{{ $job->category->name ?? 'N/A' }}</td>
                                             <td class="p-3">{{ $job->location }}</td>
                                             <td class="p-3">

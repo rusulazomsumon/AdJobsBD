@@ -5,6 +5,7 @@ use App\Models\Job;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class JobPostController extends Controller
 {
@@ -13,8 +14,19 @@ class JobPostController extends Controller
      */
     public function index()
     {
-        $jobs = Job::latest()->paginate(10); 
-        return view('backend.modules.jobs.index', compact('jobs')); // Pass jobs data to the view
+        // sending using mode, ORM
+        // $jobs = Job::latest()->paginate(10); 
+        // return view('backend.modules.jobs.index', compact('jobs'));  
+
+        // sending menually 
+        // Fetch job with related company and category data
+        $job = DB::table('jobs')
+        ->select('jobs.*', 'company.name as company_name', 'company.description as company_description', 'company.picture as company_logo', 'job_category.name as category_name')
+        ->leftJoin('company', 'jobs.company_id', '=', 'company.id')
+        ->leftJoin('job_category', 'jobs.category_id', '=', 'job_category.id');
+
+        // Pass the job data to the view
+        return view('backend.modules.jobs.index', compact('job'));
     }
 
 
