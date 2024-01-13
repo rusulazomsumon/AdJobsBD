@@ -20,7 +20,7 @@
                                 <form action="{{ route('dashboard.jobs.store') }}" method="post">
                                     @csrf
                             
-                                    <div class="row">
+                                    <div class="row ">
                                         <div class="row mb-5">
                                             {{-- form head left area --}}
                                             <div class="col-md-8">
@@ -30,8 +30,8 @@
                                                 </div>
                                 
                                                 <div class="form-group mt-3">
-                                                    <label for="description">Description:</label>
-                                                    <textarea class="form-control" name="description" rows="4" required></textarea>
+                                                    <label for="description">Job Description:</label>
+                                                    <textarea class="form-control" id="editor" name="description" rows="4"></textarea>
                                                 </div>
                                             </div>
 
@@ -135,3 +135,16 @@
                 </main>
             @endsection
 
+            {{-- pushing js for this page to main page --}}
+            @push('js')
+                {{-- <script src="/ckeditor/ckeditor.js"></script> --}}
+                <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+                <script>
+                    ClassicEditor
+                    .create(document.querySelector('#editor'))
+                    .catch(error=>{
+                        console.error(error);
+                    });
+                </script>
+
+            @endpush

@@ -11,8 +11,9 @@
                 <div class="row gy-5 gx-4">
                     <div class="col-lg-8">
                         <div class="d-flex align-items-center mb-5">
-                            <img class="flex-shrink-0 img-fluid border rounded" src="{{ $job->company_logo }}" alt="" style="width: 80px; height: 80px;">
+                            <img class="flex-shrink-0 img-fluid border rounded" src="{{ $job->company_logo }}" alt="" style="width: 100px; height: 100px;">
                             <div class="text-start ps-4">
+                                <h4 class="text-warning"><a href="#">{{ $job->company_name }}</a></h4>
                                 <h3 class="mb-3">{{ $job->title }}</h3>
                                 <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{ $job->location }}</span>
                                 <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>{{ $job->type }}</span>
@@ -21,8 +22,11 @@
                         </div>
 
                         <div class="mb-5">
-                            <h4 class="mb-3">Job description</h4>
-                            <p>{{ $job->description }}</p>
+                            <h4 class="mb-3 text-success">Job description</h4>
+                            <div class="border p-3">
+                                {{-- ck editor job description showing using htmlspecialchar_decode --}}
+                                {!! htmlspecialchars_decode($job->description) !!}
+                            </div>
                         </div>
         
                         <div class="">
