@@ -32,7 +32,7 @@ class CreateJobsTable extends Migration
             $table->timestamps();
 
             // Inclusive fields
-            $table->text('accessibility_needs')->nullable();
+            $table->text('accessibility_needs')->nullable(); 
             $table->text('strengths_and_skills')->nullable();
             $table->text('suggested_accommodations')->nullable();
 

@@ -26,7 +26,8 @@ class JobPostController extends Controller
             ->select('jobs.*', 'company.name as company_name', 'company.description as company_description', 'company.picture as company_logo', 'job_category.category_types as category_name')
             ->leftJoin('company', 'jobs.company_id', '=', 'company.id')
             ->leftJoin('job_category', 'jobs.category_id', '=', 'job_category.id')
-            ->paginate(10);  // Apply pagination to retrieve 10 results per page
+            ->orderBy('jobs.id', 'DESC')
+            ->paginate(5);  
 
 
         // Pass the job data to the view
@@ -39,7 +40,7 @@ class JobPostController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.modules.jobs.create');
     }
 
     /**
@@ -47,7 +48,21 @@ class JobPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate the form data using the Job model
+        $validator = Job::validate($request->all());
+
+        // Check if validation fails
+        if ($validator->fails()) {
+            return redirect()->route('dashboard.jobs.create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        // Create a new job instance and save it to the database
+        Job::create($request->all());
+
+        // Redirect to a success page or back to the form with a success message
+        return redirect()->route('dashboard.jobs.create')->with('success', 'Job created successfully!');
     }
 
     /**

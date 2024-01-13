@@ -23,24 +23,6 @@
                         <div class="mb-5">
                             <h4 class="mb-3">Job description</h4>
                             <p>{{ $job->description }}</p>
-                            <h4 class="mb-3">Responsibility</h4>
-                            <p>Magna et elitr diam sed lorem. Diam diam stet erat no est est. Accusam sed lorem stet voluptua sit sit at stet consetetur, takimata at diam kasd gubergren elitr dolor</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Dolor justo tempor duo ipsum accusam</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Elitr stet dolor vero clita labore gubergren</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Rebum vero dolores dolores elitr</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Est voluptua et sanctus at sanctus erat</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Diam diam stet erat no est est</li>
-                            </ul>
-                            <h4 class="mb-3">Qualifications</h4>
-                            <p>Magna et elitr diam sed lorem. Diam diam stet erat no est est. Accusam sed lorem stet voluptua sit sit at stet consetetur, takimata at diam kasd gubergren elitr dolor</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Dolor justo tempor duo ipsum accusam</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Elitr stet dolor vero clita labore gubergren</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Rebum vero dolores dolores elitr</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Est voluptua et sanctus at sanctus erat</li>
-                                <li><i class="fa fa-angle-right text-primary me-2"></i>Diam diam stet erat no est est</li>
-                            </ul>
                         </div>
         
                         <div class="">

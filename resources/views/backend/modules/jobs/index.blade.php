@@ -17,7 +17,7 @@
                                     {{-- <div class="card-body">Total {{ $jobs->total() }} Jobs Found</div> --}}
                                     <div class="card-body">Total {{ $jobs->total() }} Jobs Found</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#"> Add New Job </a>
+                                        <a class="small text-white stretched-link" href="{{ route('dashboard.jobs.create') }}"> Add New Job </a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

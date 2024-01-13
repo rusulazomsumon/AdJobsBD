@@ -72,7 +72,9 @@ Route::get('/about', function () {
 // @@@@@@@@@@@@@@@@@@@bakcend@@@@@@@@@@@@@@@@@
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], function(){
     Route::get('/', [BackendController::class,'index'])->name('dashboard');
-    Route::resource('jobs', JobPostController::class)->names('dashboard.jobs');    
+    Route::resource('/jobs', JobPostController::class)->names('dashboard.jobs');    
+    // rotute and telling which funtion should use , no need name route use করেই করা যায় dashboard.jobs.create
+    // Route::resource('/jobs_post', [JobPostController::class, 'create'])->names('dashboard.jobs.post');    
     // category 
     // Route::resource('category', CategoryController::class);
     // post 
