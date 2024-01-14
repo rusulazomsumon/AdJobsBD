@@ -39,16 +39,20 @@ class Job extends Model
 
           
     ];
+    // reletionship 
 
     public function company()
     {
-        return $this->belongsTo(Company::class);
+        return $this->belongsTo(\App\Models\Company::class);
     }
 
     public function category()
     {
-        return $this->belongsTo(JobCategory::class);
+        return $this->belongsTo(\App\Models\JobCategory::class);
+
     }
+
+    // sending after validate
 
     public static function validate($data)
     {

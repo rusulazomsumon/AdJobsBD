@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\Job;
+use App\Models\Company;
+use App\Models\JobCategory;
+
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -40,7 +43,11 @@ class JobPostController extends Controller
      */
     public function create()
     {
-        return view('backend.modules.jobs.create');
+       // Retrieve all companies and categories for dropdowns
+        $companies = DB::table('company')->select('id', 'name')->get();
+        $categories = DB::table('job_category')->select('id', 'category_types as name')->get();
+
+        return view('backend.modules.jobs.create', compact('companies', 'categories'));
     }
 
     /**

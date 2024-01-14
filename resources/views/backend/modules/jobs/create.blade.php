@@ -1,4 +1,5 @@
-            <!-- including the app (header & footer) -->
+
+           <!-- including the app (header & footer) -->
             @extends('backend.layouts.app')
 
             <!-- Main Home Page Body -->
@@ -59,16 +60,30 @@
                                         <!-- Column 1 -->
                                         <div class="col-md-4">
                             
+                                            {{-- company name --}}
                                             <div class="form-group">
-                                                <label for="company_id">Company ID:</label>
-                                                <input type="number" class="form-control" name="company_id" required>
+                                                <label for="company_id">Company:</label>
+                                                <select class="form-control" name="company_id" required>
+                                                    <option value="" selected disabled>--Select--</option>
+                                                    @foreach ($companies as $company)
+                                                        <option value="{{ $company->id }}">{{ $company->name }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
+                                            
+                                            {{-- job category --}}
+                                            <div class="form-group">
+                                                <label for="category_id">Company Type:</label>
+                                                <select class="form-control" name="category_id" required>
+                                                    <option value="" selected disabled>--Select--</option>
+                                                    @foreach ($categories as $category)
+                                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            
                             
-                                            <div class="form-group">
-                                                <label for="category_id">Category ID:</label>
-                                                <input type="number" class="form-control" name="category_id" required>
-                                            </div>
-
+                                            {{-- dade line --}}
                                             <div class="form-group">
                                                 <label for="deadline">Deadline:</label>
                                                 <input type="date" class="form-control" name="deadline" required>
