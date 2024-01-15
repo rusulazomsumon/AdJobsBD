@@ -47,14 +47,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($jobs as $job)
+                                        @foreach ($jobs as $job) 
                                         <tr>
-                                            <td class="p-3">{{ $job->title }}</td>
+                                            <td class="p-3"><a href="{{ route('dashboard.jobs.show', $job->id) }}">{{ $job->title }}</a></td>
                                             <td class="p-3">{{ $job->company_name ?? 'N/A' }}</td>
                                             <td class="p-3">{{ $job->category_name ?? 'N/A' }}</td>
                                             <td class="p-3">{{ $job->location }}</td>
                                             <td class="p-3">
-                                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                                            <a href="{{ route('dashboard.jobs.edit', $job->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                             </td>
                                             <td class="p-3">
                                                 <form action="{{ route('dashboard.jobs.destroy', $job->id) }}"
