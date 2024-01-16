@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BackendController;
 use App\Http\Controllers\JobPostController;
+use App\Http\Controllers\JobCategoryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 
@@ -76,6 +77,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], fu
     // rotute and telling which funtion should use , no need name route use করেই করা যায় dashboard.jobs.create
     // Route::resource('/jobs_post', [JobPostController::class, 'create'])->names('dashboard.jobs.post');    
     // category 
+    Route::resource('/jobcategory', JobCategoryController::class)->names('dashboard.jobcategory');    
     // Route::resource('category', CategoryController::class);
     // post 
     // Route::resource('post', PostController::class);

@@ -34,45 +34,43 @@
                                     </div>
                                 @endif
                                 <!-- all job table -->
-                                <table>
+                                <table class="table table-striped table-bordered table-hover">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th class="p-3">Title</th>
-                                            <th class="p-3">Company</th>
-                                            <th class="p-3">Category</th>
-                                            <th class="p-3">Location</th>
-                                            <th class="p-3">Edit</th>
-                                            <th class="p-3">Delete</th>
-                                            <th class="p-3">View</th>
+                                            <th class="col-4">Title</th>
+                                            <th>Company</th>
+                                            <th>Category</th>
+                                            <th>Location</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                            <th>View</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($jobs as $job) 
-                                        <tr>
-                                            <td class="p-3"><a href="{{ route('dashboard.jobs.show', $job->id) }}">{{ $job->title }}</a></td>
-                                            <td class="p-3">{{ $job->company_name ?? 'N/A' }}</td>
-                                            <td class="p-3">{{ $job->category_name ?? 'N/A' }}</td>
-                                            <td class="p-3">{{ $job->location }}</td>
-                                            <td class="p-3">
-                                            <a href="{{ route('dashboard.jobs.edit', $job->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                            </td>
-                                            <td class="p-3">
-                                                <form action="{{ route('dashboard.jobs.destroy', $job->id) }}"
-                                                        method="POST">
+                                        @foreach ($jobs as $job)
+                                            <tr>
+                                                <td class="col-4"><a href="{{ route('dashboard.jobs.show', $job->id) }}">{{ $job->title }}</a></td>
+                                                <td>{{ $job->company_name ?? 'N/A' }}</td>
+                                                <td>{{ $job->category_name ?? 'N/A' }}</td>
+                                                <td>{{ $job->location }}</td>
+                                                <td>
+                                                    <a href="{{ route('dashboard.jobs.edit', $job->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                                </td>
+                                                <td>
+                                                    <form action="{{ route('dashboard.jobs.destroy', $job->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button
-                                                    type="submit"
-                                                    class="btn btn-sm btn-danger">Delete</button>     
-                                                </form>
-                                            </td>
-                                            <td class="p-3">      
-                                                <a href="{{ route('front.single', $job->id) }}" class="btn btn-sm btn-info">View</a>
-                                            </td>
-                                        </tr>
+                                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('front.single', $job->id) }}" class="btn btn-sm btn-info">View</a>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
+                                
                             <div>
                             <!-- {{-- pagignate pages --}} -->
                             <div class="col-xl-3 col-md-12 pagination p-5 mt-3 d-flex justify-content-center">
@@ -85,4 +83,3 @@
                     </div>
                 </main>
             @endsection
-            <!-- footer -->

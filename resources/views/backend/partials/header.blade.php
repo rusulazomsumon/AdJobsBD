@@ -67,6 +67,7 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('dashboard.jobs.create') }}">Create Job</a>
+                                    <a class="nav-link" href="{{ route('dashboard.jobcategory.index') }}">Job Category</a>
                                     <a class="nav-link" href="{{ route('dashboard.jobs.index') }}">All Jobs</a>
                                 </nav>
                             </div>
@@ -114,7 +115,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        Admin
                     </div>
                 </nav>
             </div>
