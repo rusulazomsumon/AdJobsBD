@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Job;
+use App\Models\JobPost;
 use App\Models\Company;
 use App\Models\JobCategory;
 
@@ -30,7 +30,7 @@ class JobPostController extends Controller
             ->leftJoin('company', 'jobs.company_id', '=', 'company.id')
             ->leftJoin('job_category', 'jobs.category_id', '=', 'job_category.id')
             ->orderBy('jobs.id', 'DESC')
-            ->paginate(5);  
+            ->paginate(10);  
 
 
         // Pass the job data to the view
@@ -113,24 +113,34 @@ class JobPostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Job $job)
+    public function update(Request $request, $id)
     {
         // Validate the form data using the Job model
-        $validator = Job::validate($request->all());
+        $validator = JobPost::validate($request->all());
 
         // Check if validation fails
         if ($validator->fails()) {
-            return redirect()->route('dashboard.jobs.edit', $job->id)
+            return redirect()->route('dashboard.jobs.edit', $id)
                 ->withErrors($validator)
-                ->withInput();
+                ->withInput()
+                ->with('error', 'Validation failed. Please check the form for errors.');
         }
 
-        // Update the existing job with the new data
-        $job->update($request->all());
+        try {
+            // Find the job instance by ID
+            $job = Job::findOrFail($id);
 
-        // Redirect to the job detail page or back to the list with a success message
-        return redirect()->route('dashboard.jobs.show', $job->id)->with('success', 'Job updated successfully!');
+            // Update the job instance with the new data
+            $job->update($request->all());
+
+            // Redirect to a success page or back to the form with a success message
+            return redirect()->route('dashboard.jobs.edit', $id)->with('success', 'Job updated successfully!');
+        } catch (\Exception $e) {
+            // Handle any exceptions that occur during the update process
+            return back()->with('error', 'Failed to update job. Please try again. ' . $e->getMessage());
+        }
     }
+
 
     /**
      * Remove the specified resource from storage.

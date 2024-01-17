@@ -36,6 +36,18 @@
                            <li class="breadcrumb-item active">Edit Your Job</li>
                        </ol>
                        <div class="row"> 
+                            {{-- exception massage --}}
+                            @if(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
+                            @if(session('error'))
+                                <div class="alert alert-danger">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
 
                            {{-- *TODO: Add some Padding and heading beutify all filds, and automated company name, job category, ect forms  --}}
 
@@ -164,7 +176,7 @@
                                        </div>
                                    </div>
                            
-                                   <button type="submit" class="btn btn-primary mt-5">Create Job</button>
+                                   <button type="submit" class="btn btn-primary mt-5">Update Job</button>
                                </form>
                            
                            {{-- job form end --}}
