@@ -120,18 +120,17 @@ class JobPostController extends Controller
 
         // Check if validation fails
         if ($validator->fails()) {
-            return redirect()->route('dashboard.jobs.edit', $id)
+            return redirect()->route('dashboard.jobs.create')
                 ->withErrors($validator)
-                ->withInput()
-                ->with('error', 'Validation failed. Please check the form for errors.');
+                ->withInput();
         }
 
         try {
             // Find the job instance by ID
-            $job = Job::findOrFail($id);
+            $jobPost = JobPost::findOrFail($id);
 
             // Update the job instance with the new data
-            $job->update($request->all());
+            $jobPost->update($request->all());
 
             // Redirect to a success page or back to the form with a success message
             return redirect()->route('dashboard.jobs.edit', $id)->with('success', 'Job updated successfully!');
@@ -148,8 +147,8 @@ class JobPostController extends Controller
     public function destroy(string $id)
     {
         try {
-            $job = Job::findOrFail($id);
-            $job->delete();
+            $jobPost = JobPost::findOrFail($id);
+            $jobPost->delete();
 
             return redirect()->route('dashboard.jobs')->with('success', 'Job deleted successfully!');
         } catch (\Exception $e) {
