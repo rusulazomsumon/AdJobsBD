@@ -56,7 +56,7 @@ class JobPostController extends Controller
     public function store(Request $request)
     {
         // Validate the form data using the Job model
-        $validator = Job::validate($request->all());
+        $validator = JobPost::validate($request->all());
 
         // Check if validation fails
         if ($validator->fails()) {
@@ -66,7 +66,7 @@ class JobPostController extends Controller
         }
 
         // Create a new job instance and save it to the database
-        Job::create($request->all());
+        JobPost::create($request->all());
 
         // Redirect to a success page or back to the form with a success message
         return redirect()->route('dashboard.jobs.create')->with('success', 'Job created successfully!');
