@@ -82,6 +82,11 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'verified']], fu
     // post 
     // Route::resource('post', PostController::class);
 });
+// In routes/api.php
+Route::group(['prefix' => '/api/jobs'], function () {
+    Route::get('/', [JobController::class, 'index']); // API jobs endpoint
+    Route::post('/', [JobController::class, 'store']); // API job creation endpoint
+});
 
 // using home controller 
 // Route::get('/dashboard', 'App\Http\Controllers\BackendController@index')->name('dashboard');

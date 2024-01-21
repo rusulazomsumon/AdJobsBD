@@ -34,7 +34,14 @@ class JobPostController extends Controller
 
 
         // Pass the job data to the view
-        return view('backend.modules.jobs.index', compact('jobs'));
+        // return view('backend.modules.jobs.index', compact('jobs'));
+        if (request()->is('api/*')) {
+            // API request: return JSON response
+            return response()->json($jobs);
+        } else {
+            // Web request (home page): return view
+            return view('backend.modules.jobs.index', compact('jobs'));
+        }
     }
 
 
