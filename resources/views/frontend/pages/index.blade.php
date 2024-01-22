@@ -1,4 +1,4 @@
-        <!-- including the app (header & footer) -->
+       <!-- including the app (header & footer) -->
         @extends('frontend.layouts.app')
 
         <!-- Main Home Page Body -->

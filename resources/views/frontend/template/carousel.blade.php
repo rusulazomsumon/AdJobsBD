@@ -1,7 +1,7 @@
 <div class="container-fluid p-0">
             <div class="owl-carousel header-carousel position-relative">
                 <!-- slider -->
-                @foreach($sliders as $slider)
+                {{-- @foreach($sliders as $slider)
                 <div class="owl-carousel-item position-relative">
                     <img class="img-fluid" src="{{ asset('assets/img/carousel-1.jpg') }}" alt="">
                     <!-- <img class="img-fluid" src="{{ $slider->bg_img_url }}" width="100%" height="800px" alt=""> -->
@@ -18,8 +18,8 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
-                <!-- <div class="owl-carousel-item position-relative">
+                @endforeach --}}
+                <div class="owl-carousel-item position-relative">
                     <img class="img-fluid" src="{{ asset('assets/img/carousel-2.jpg') }}" alt="">
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(43, 57, 64, .5);">
                         <div class="container">
@@ -33,6 +33,7 @@
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div> 
+                
             </div>
         </div>

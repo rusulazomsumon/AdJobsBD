@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $sliders = DB::table('sliders')->get(); // Use the DB facade
+        $sliders = DB::table('sliders')->get();  
         return view('frontend.pages.index', compact('sliders'));
     }
 
